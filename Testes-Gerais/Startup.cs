@@ -26,6 +26,8 @@ namespace Testes_Gerais
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<GuidService>(); //Scope tmbm serve caso eu quisr o mesmo guid
+
             services.AddTransient<INameParserService, NameParserService>();
 
             services.Configure<FeaturesConfiguration>(Configuration.GetSection("Features"));
